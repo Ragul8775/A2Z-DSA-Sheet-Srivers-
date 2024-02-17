@@ -28,3 +28,27 @@ Try to solve this in O(log(n))
 Constraints:
 1 <= ‘n’ <= 10^9
  */
+#include <bits/stdc++.h>
+using namespace std;
+
+int count(int n)
+{
+    int temp = n;
+    int count = 0;
+    while (temp != 0)
+    {
+        int lastdigit = temp % 10;
+        temp = temp / 10;
+        if (lastdigit > 0 && n % lastdigit == 0)
+            count++;
+    }
+    return count;
+};
+int main()
+{
+    int n;
+    cout << "Enter the Number:";
+    cin >> n;
+    count(n);
+    return 0;
+}
